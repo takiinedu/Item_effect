@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <style>
+    :root {
+    --backgound-color: darkgray;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: var(--backgound-color);
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.upper {
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background: white;
+    transition: 0.2s;
+}
+.subtract {
+    width: 1px;
+    height: 0px;
+    top: -45px;
+    right: -45px;
+    background: var(--backgound-color);
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 35%;
+    overflow: hidden;
+
+    position: absolute;
+
+    transition: 0.4s;
+        z-index: 2;
+}
+
+.box:hover .subtract{
+    width: 120px;
+    height: 120px;
+    transition: 0.2s ;
+}
+
+.box:hover .button {
+    top: 50px;
+    right: 50px;
+    margin-bottom: 1px;
+    margin-left: 1px;
+    transition: 0.35s;
+}  
+
+.button {
+    width: 55px;
+    height: 55px;
+    top: 150px;
+    right: 150px;
+    background: black;
+    display:flex;
+    transform: rotateZ(-45deg);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+    position:absolute;
+    transition: 1s;
+}
+.upper-top{
+    width: calc(100%);
+    height: 16px;
+    background: white;
+    transition: 0.1s linear;
+    border-radius: 0 16px 0 0;
+}
+.box:hover .upper-top{
+    width: calc(100% - 75px);
+    transition: 0.3s;
+}
+.upper-right{
+    width:16px;
+    height: 100%;
+    background: white;
+    position: absolute;
+    right: 0;
+    bottom:0;
+    transition: 0.1s;
+    border-radius: 0 16px 0 0;
+    z-index: 1;
+}
+.box:hover .upper-right{
+    height:calc(100% - 75px);
+    transition: 0.3s;
+}
+
+    </style>
+    <div class="box">
+        <div class="upper-top"></div>
+        <div class="upper">
+        </div>
+        <div class="subtract">
+                   <div class="button">
+                       <svg fill = "white" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 32" width="32px" height="32px"><path d="M 17.388672 7.1503906 C 17.121755 7.1291063 16.855206 7.1337412 16.59375 7.1640625 C 15.02501 7.3459905 13.625363 8.4339526 13.240234 10.123047 C 13.201404 10.293243 13.172224 10.466916 13.136719 10.638672 C 9.6329407 10.454402 6.0952756 10.949584 2.8027344 12.328125 A 1.0001 1.0001 0 0 0 2.8007812 12.330078 C 2.4507004 12.477703 2.1397124 12.722613 1.9238281 13.083984 C 0.764136 15.025835 0.89904704 17.31544 1.8886719 19.318359 C 2.0941457 19.736156 2.4328002 20.036891 2.8398438 20.207031 A 1.0001 1.0001 0 0 0 2.8417969 20.208984 C 6.1154511 21.572927 9.628282 22.063849 13.109375 21.884766 C 13.161645 22.117473 13.203465 22.346933 13.265625 22.582031 A 1.0001 1.0001 0 0 0 13.265625 22.583984 C 13.492852 23.441281 14.019842 24.282294 14.875 24.835938 C 15.730158 25.389581 16.907108 25.590605 18.177734 25.242188 C 22.66629 24.011657 27.456607 21.274919 29.802734 18.886719 C 30.433207 18.244689 30.927734 17.33934 30.927734 16.277344 A 1.0001 1.0001 0 0 0 30.927734 16.275391 C 30.924834 15.095334 30.308481 14.117881 29.574219 13.421875 A 1.0001 1.0001 0 0 0 29.574219 13.419922 C 26.893685 10.882477 22.122704 8.4259922 18.1875 7.2949219 C 17.922875 7.2188784 17.655589 7.1716749 17.388672 7.1503906 z M 16.796875 9.1152344 C 17.059756 9.0985886 17.342968 9.1323838 17.636719 9.2167969 C 21.223515 10.247727 25.935751 12.730444 28.199219 14.873047 C 28.654458 15.304568 28.926018 15.817746 28.927734 16.279297 C 28.9272 16.728562 28.72801 17.126884 28.376953 17.484375 C 26.48508 19.410175 21.731881 22.194983 17.648438 23.314453 C 16.833064 23.538036 16.33953 23.401353 15.960938 23.15625 C 15.582802 22.911439 15.311241 22.493455 15.199219 22.072266 L 15.199219 22.070312 C 15.083083 21.630834 14.986467 21.182196 14.898438 20.726562 A 1.0001 1.0001 0 0 0 13.828125 19.919922 C 10.39035 20.226267 6.8987547 19.713555 3.6660156 18.376953 C 2.9333557 16.86202 2.8816875 15.444136 3.6269531 14.160156 C 6.8841119 12.806014 10.404651 12.287611 13.869141 12.603516 A 1.0001 1.0001 0 0 0 14.943359 11.787109 C 15.019529 11.370113 15.101686 10.961601 15.191406 10.568359 A 1.0001 1.0001 0 0 0 15.191406 10.566406 C 15.397277 9.6635006 16.008231 9.1651716 16.796875 9.1152344 z"/></svg>
+                </div>
+            </div>
+        <div class="upper-right">
+    </div>
+</body>
+</html>
