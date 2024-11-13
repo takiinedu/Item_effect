@@ -10,6 +10,8 @@
 
 *{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -22,8 +24,8 @@ body {
 }
 
 .box {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 16px;
     position: relative;
     overflow: hidden;
@@ -55,8 +57,8 @@ body {
 }
 
 .box:hover .subtract{
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     transition: 0.2s ;
 }
 
@@ -69,8 +71,8 @@ body {
 }  
 
 .button {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     top: 150px;
     right: 150px;
     background: black;
@@ -93,7 +95,7 @@ body {
     border-radius: 0 16px 0 0;
 }
 .box:hover .upper-top{
-    width: calc(100% - 75px);
+    width: calc(100% - 65px);
     transition: 0.3s;
 }
 .upper-right{
@@ -110,12 +112,82 @@ body {
     z-index: 1;
 }
 .box:hover .upper-right{
-    height:calc(100% - 75px);
+    height:calc(100% - 65px);
     transition: 0.3s;
 }
-
+.container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.date{
+    width: 100%;
+    text-align: right;
+}
+.box:hover .date{
+    width: 120%;
+    transition: 0.1s;
+    opacity: 0;
+}
+.box .text-box1{
+    background: white;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 4;
+    transition: 0.2s
+}
+.box:hover .text-box1{
+    opacity: 0;
+}
+.box .container .title{
+    margin-block: 15px 5px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600px;
+}
+.box .container p{
+    font-size: 13px;
+    font-weight: 600;
+    color: silver;
+}
+.box .container .text-box2{
+    height: 100%;
+    padding-top: 70px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    padding-left: 10px;
+    top: 0;
+}
+.text-box2 h1{
+    font-size: 50px;
+}
+.text-box2 .read-more{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
+}
     </style>
     <div class="box">
+        <div class="container">
+            <div class="date">11/11/2024</div>
+            <div class="text-box1">
+                <h2 class="title">Dự án wesite BAN CÔNG NGHỆ</h2>
+                <p>Siêu cấp dự án của sinh viên năm nhất vừa được tiến hành do trùm GYM leader...</p>
+            </div>
+            <div class="text-box2">
+                <h1>11</h1>
+                <h4>/thành viên</4>
+                <h4 class="read-more">Đọc thêm</h4>
+            </div>
+        </div>
         <div class="upper-top"></div>
         <div class="upper">
         </div>
